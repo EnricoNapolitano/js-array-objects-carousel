@@ -31,12 +31,21 @@ const jumbotron = () => {
     </div>
     `;
 return jumboElm.innerHTML= jumbo;
-}
+};
+const thumbnails = () => {
+    let thumbs = '';
+    for (let i=0; i < gamesImage.length; i++) {
+        thumbs += `<li> <img src="${gamesImage[i]}" alt="${gamesTitle[i]}"> </li>`;
+    }
+    return thumbsList.innerHTML += thumbs;
+};
+
 
 //* DOMS ELEMENT
 const jumboElm = document.querySelector('#main-carousel .jumbotron');
 const arrowUp = document.querySelector('#main-carousel .arrow.up');
 const arrowDwn = document.querySelector('#main-carousel .arrow.down');
+const thumbsList = document.querySelector('#main-carousel ul');
 
 //* ARRAYS
 const gamesImage = data.map(image => image.image);
@@ -44,7 +53,8 @@ const gamesTitle = data.map(title => title.title);
 const gamesText = data.map(text => text.text);
 
 let j = 0;
-jumbotron();
+jumbotron(); // this function generates the jumbotron
+thumbnails(); // this function generates the thumbsnails
 
 //* DINAMIC EVENTS - clicking buttons
 arrowDwn.addEventListener('click', function(){
