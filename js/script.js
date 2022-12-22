@@ -20,6 +20,11 @@ const changeThumb = () => {
     thumbsArray.forEach (thumb => thumb.classList.remove('active'));
     thumbsArray[j].classList.add('active');
 };
+const changeJumboAtuo = () => {
+    j < gamesImage.length - 1 ? j++ : j=0;
+    createJumbotron();
+    changeThumb();
+} 
 
 
 //* DOMS ELEMENT ----
@@ -69,4 +74,6 @@ arrowUp.addEventListener('click', function(){
     createJumbotron();
     changeThumb();
 })
+
+setInterval(changeJumboAtuo, 3000);
 
