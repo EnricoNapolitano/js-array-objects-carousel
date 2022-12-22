@@ -21,6 +21,18 @@ Buon lavoro e buon divertimento! :faccia_leggermente_sorridente:
 PS :avviso: Vi ricordo anche qui che l'orario dei ticket oggi è ridotto: 15:00 - 17:00
 */
 
+//* FUNCTIONS
+const jumbotron = () => {
+    const jumbo =`
+    <img src="${gamesImage[j]}" alt="${gamesTitle[j]}">
+    <div class="jumbo-text">
+        <h1>${gamesTitle[j]}</h1>
+        <p>${gamesText[j]}</p>
+    </div>
+    `;
+return jumboElm.innerHTML= jumbo;
+}
+
 //* DOMS ELEMENT
 const jumboElm = document.querySelector('#main-carousel .jumbotron');
 const arrowUp = document.querySelector('#main-carousel .arrow.up');
@@ -32,43 +44,20 @@ const gamesTitle = data.map(title => title.title);
 const gamesText = data.map(text => text.text);
 
 let j = 0;
-const jumbo =`
-    <img src="${gamesImage[j]}" alt="${gamesTitle[j]}">
-    <div class="jumbo-text">
-        <h1>${gamesTitle[j]}</h1>
-        <p>${gamesText[j]}</p>
-    </div>
-    `;
-jumboElm.innerHTML= jumbo;
+jumbotron();
 
-
+//* DINAMIC EVENTS - clicking buttons
 arrowDwn.addEventListener('click', function(){
     j++;
     if (j > gamesImage.length - 1) {
       j = 0;
     }
-    const jumbo =`
-      <img src="${gamesImage[j]}" alt="${gamesTitle[j]}">
-      <div class="jumbo-text">
-          <h1>${gamesTitle[j]}</h1>
-          <p>${gamesText[j]}</p>
-      </div>
-      `;
-    jumboElm.innerHTML = jumbo;
+    jumbotron();
 })
-
-
 arrowUp.addEventListener('click', function(){
     j--;
     if (j < 0) {
         j = gamesImage.length - 1;
     }
-    const jumbo =`
-    <img src="${gamesImage[j]}" alt="${gamesTitle[j]}">
-      <div class="jumbo-text">
-          <h1>${gamesTitle[j]}</h1>
-          <p>${gamesText[j]}</p>
-      </div>
-    `;
-    jumboElm.innerHTML = jumbo;
+    jumbotron();
 })
