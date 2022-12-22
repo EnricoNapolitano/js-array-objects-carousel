@@ -36,7 +36,20 @@ let j = 0;
 jumbotron(); // this function generates the jumbotron
 thumbnails(); // this function generates the thumbsnails
 
+const thumbsArray = document.querySelectorAll('#main-carousel ul li'); //get all the thumbs
+
 //* DINAMIC EVENTS - clicking buttons
+//Thumbnails click
+thumbsArray.forEach((thumb, index) => {
+    thumb.addEventListener('click', function() {
+      j=index; // setted a corrispondence between jumbotron j and thumbsArray index
+      jumbotron();
+      thumbsArray.forEach (thumb => thumb.classList.remove('active'));
+      thumb.classList.add('active');
+    });
+  });
+
+// Arrows click
 arrowDwn.addEventListener('click', function(){
     j++;
     if (j > gamesImage.length - 1) {
@@ -51,3 +64,4 @@ arrowUp.addEventListener('click', function(){
     }
     jumbotron();
 })
+
