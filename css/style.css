@@ -10,7 +10,7 @@
 /** CUSTOM PROPERTY */
 /* Colors */
 :root{
-    --cs-blue: #0072ce;
+    --cs-blue: rgb(0, 114, 206);
 }
 
 
@@ -120,18 +120,21 @@ header h2 {
 #main-carousel li {
     width: 200px;
     height: 98px;
+    filter: opacity(0.6) ;
 
     cursor: pointer;
 }
 #main-carousel li.active {
-    border: 5px solid var(--cs-blue);
+    border: 2px solid var(--cs-blue);
+    filter: opacity(1) ;
 }
 
 
 /** HOVER */
 #main-carousel li:hover {
     border: 3px solid var(--cs-blue);
+    filter: opacity(1) ;
 }
 .arrow:hover {
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(0,114,206,0.8);
 }
