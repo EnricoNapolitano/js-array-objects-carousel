@@ -117,4 +117,12 @@ header h2 {
     width: 200px;
     height: 98px;
     background-color: cadetblue;
+
+    cursor: pointer;
+}
+
+
+/** HOVER */
+#main-carousel li:hover {
+    border: 4px solid var(--cs-blue);
 }
