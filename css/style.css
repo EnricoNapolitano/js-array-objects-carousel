@@ -3,4 +3,118 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Comfortaa', cursive;
+}
+
+
+/** CUSTOM PROPERTY */
+/* Colors */
+:root{
+    --cs-blue: #0072ce;
+}
+
+
+/** GENERICS */
+h2 {
+    margin-bottom: 30px;
+}
+ul {
+    list-style: none;
+}
+img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/** UTILS */
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.arrow {
+    border: 2px solid white;
+    text-shadow: 5px 5px 8px black;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    position: absolute;
+    cursor: pointer;
+}
+.up {
+    top: 20px;
+    right: 75px;
+}
+.down {
+    bottom: 20px;
+    right: 75px;
+}
+
+/** HEADER */
+header {
+    height: 100px;
+    background-color: var(--cs-blue);
+    color: white;
+    margin-bottom: 80px;
+}
+header .container {
+    height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header li {
+    padding-left: 30px;
+
+    cursor: pointer;
+}
+header h2 {
+    font-size: 60px;
+    margin-bottom: 0;
+
+    display: inline-block;
+}
+
+
+/** MAIN CAROUSEL */
+#main-carousel {
+    margin-bottom: 40px;
+    border-radius: 20px;
+    color: white;
+    overflow: hidden;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main-carousel .jumbotron {
+    width: 1000px;
+    height: 490px;
+    background-color: blueviolet;
+
+    position: relative;
+}
+#main-carousel .jumbo-text {
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+#main-carousel li {
+    width: 200px;
+    height: 98px;
+    background-color: cadetblue;
 }
