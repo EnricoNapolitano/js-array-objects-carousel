@@ -38,6 +38,9 @@ a {
 figure {
     width: 350px;
 }
+section {
+    position: relative;
+}
 
 
 /** UTILS */
@@ -65,13 +68,32 @@ figure {
     bottom: 20px;
     right: 75px;
 }
+.pb-30 {
+    padding-bottom: 30px;
+}
+.play-pause {
+    color: white;
+    padding: 50px;
+    cursor: pointer;
+    text-shadow: 2px 2px 5px black;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
 
 /** HEADER */
 header {
     height: 100px;
     background-color: var(--cs-blue);
     color: white;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
+
+    position: sticky;
+    top:0;
+    left:0;
+    right:0;
 }
 header .container {
     height: 100px;
@@ -118,6 +140,8 @@ header h2 {
     position: relative;
 }
 #main-carousel .jumbo-text {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
     text-shadow: 0px 0px 4px rgb(40, 40, 40);
     padding: 30px;
     position: absolute;
@@ -165,4 +189,7 @@ footer figure {
 }
 .arrow:hover {
     background-color: rgba(0,114,206,0.8);
+}
+.play-pause:active {
+    transform: scale(0.8);
 }

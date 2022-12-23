@@ -20,7 +20,7 @@ const changeThumb = () => {
     thumbsArray.forEach (thumb => thumb.classList.remove('active'));
     thumbsArray[j].classList.add('active');
 };
-const changeJumboAtuo = () => {
+const changeJumboAuto = () => {
     j < gamesImage.length - 1 ? j++ : j=0;
     createJumbotron();
     changeThumb();
@@ -32,6 +32,7 @@ const jumboElm = document.querySelector('#main-carousel .jumbotron');
 const arrowUp = document.querySelector('#main-carousel .arrow.up');
 const arrowDwn = document.querySelector('#main-carousel .arrow.down');
 const thumbsList = document.querySelector('#main-carousel ul');
+const play_pauseElm = document.querySelector('.play-pause');
 
 //* ARRAYS ----
 const gamesImage = data.map(image => image.image);
@@ -75,5 +76,15 @@ arrowUp.addEventListener('click', function(){
     changeThumb();
 })
 
-setInterval(changeJumboAtuo, 3000);
+const setInterval_3s = setInterval(changeJumboAuto, 3000); // jumbotron switches image each 3 seconds
+
+let play = true;
+play_pauseElm.addEventListener ('click', function(){
+    if (play) {
+        clearInterval(setInterval_3s)
+        play = false;
+    } else
+        setInterval(setInterval_3s);
+        play = true;
+});
 
