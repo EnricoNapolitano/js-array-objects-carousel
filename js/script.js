@@ -76,15 +76,17 @@ arrowUp.addEventListener('click', function(){
     changeThumb();
 })
 
-const setInterval_3s = setInterval(changeJumboAuto, 3000); // jumbotron switches image each 3 seconds
+let timer = setInterval(changeJumboAuto, 3000); // jumbotron switches image each 3 seconds
 
-let play = true;
+let isPlay = true;
 play_pauseElm.addEventListener ('click', function(){
-    if (play) {
-        clearInterval(setInterval_3s)
-        play = false;
-    } else
-        setInterval(setInterval_3s);
-        play = true;
+    if (isPlay) {
+        clearInterval(timer);
+        isPlay = false;
+    } else {
+        timer = setInterval(changeJumboAuto, 3000);
+        isPlay = true;
+    }
 });
+       
 
